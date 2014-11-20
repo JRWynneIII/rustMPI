@@ -1,5 +1,7 @@
-mod rMPI {
-    extern "C" {
-        fn MPI_Send();
-    }
+pub fn test() {
+    println!("It works!");
+}
+
+extern "C" {
+    pub fn MPI_Send();
 }
