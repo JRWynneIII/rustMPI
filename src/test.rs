@@ -2,9 +2,10 @@
 mod rustMPI;
 fn main()
 {
-    //Won't compile. argc and argv haven't been defined. how would i get that??
-    rustMPI::test();
     rustMPI::rMPI_Init();
-    println!("HelloooO");
+    println!("Testing rustMPI...");
+    let rank: int = 0;
+    rustMPI::rMPI_Comm_rank(rustMPI::MPI_COMM_WORLD,&rank);
+    println!("{}",rank);
     rustMPI::rMPI_Finalize();
 }
